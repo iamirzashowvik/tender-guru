@@ -11,6 +11,10 @@
 		C1ACF5CF2A1F731100D17008 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5CE2A1F731100D17008 /* ContentView.swift */; };
 		C1ACF5D12A1F731200D17008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1ACF5D02A1F731200D17008 /* Assets.xcassets */; };
 		C1ACF5D42A1F731200D17008 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1ACF5D32A1F731200D17008 /* Preview Assets.xcassets */; };
+		C1ACF5DC2A1F768F00D17008 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5DB2A1F768F00D17008 /* Colors.swift */; };
+		C1ACF5E02A1F798F00D17008 /* CountryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5DF2A1F798F00D17008 /* CountryCard.swift */; };
+		C1ACF5E22A1F7BD300D17008 /* SingleCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5E12A1F7BD300D17008 /* SingleCountry.swift */; };
+		C1ACF5E52A1F7D9400D17008 /* Tenders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5E42A1F7D9400D17008 /* Tenders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		C1ACF5CE2A1F731100D17008 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1ACF5D02A1F731200D17008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1ACF5D32A1F731200D17008 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C1ACF5DB2A1F768F00D17008 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C1ACF5DF2A1F798F00D17008 /* CountryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCard.swift; sourceTree = "<group>"; };
+		C1ACF5E12A1F7BD300D17008 /* SingleCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCountry.swift; sourceTree = "<group>"; };
+		C1ACF5E42A1F7D9400D17008 /* Tenders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,10 @@
 		C1ACF5CB2A1F731100D17008 /* Tenders Guru */ = {
 			isa = PBXGroup;
 			children = (
+				C1ACF5E32A1F7D7C00D17008 /* Models */,
 				C1ACF5CC2A1F731100D17008 /* Tenders_GuruApp.swift */,
-				C1ACF5CE2A1F731100D17008 /* ContentView.swift */,
+				C1ACF5DD2A1F796300D17008 /* Views */,
+				C1ACF5DA2A1F767B00D17008 /* Services */,
 				C1ACF5D02A1F731200D17008 /* Assets.xcassets */,
 				C1ACF5D22A1F731200D17008 /* Preview Content */,
 			);
@@ -65,6 +75,40 @@
 				C1ACF5D32A1F731200D17008 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C1ACF5DA2A1F767B00D17008 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C1ACF5DB2A1F768F00D17008 /* Colors.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C1ACF5DD2A1F796300D17008 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1ACF5DE2A1F797900D17008 /* Components */,
+				C1ACF5CE2A1F731100D17008 /* ContentView.swift */,
+				C1ACF5E12A1F7BD300D17008 /* SingleCountry.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1ACF5DE2A1F797900D17008 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C1ACF5DF2A1F798F00D17008 /* CountryCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C1ACF5E32A1F7D7C00D17008 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1ACF5E42A1F7D9400D17008 /* Tenders.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +182,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1ACF5CF2A1F731100D17008 /* ContentView.swift in Sources */,
+				C1ACF5DC2A1F768F00D17008 /* Colors.swift in Sources */,
+				C1ACF5E22A1F7BD300D17008 /* SingleCountry.swift in Sources */,
+				C1ACF5E02A1F798F00D17008 /* CountryCard.swift in Sources */,
 				C1ACF5CD2A1F731100D17008 /* Tenders_GuruApp.swift in Sources */,
+				C1ACF5E52A1F7D9400D17008 /* Tenders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
