@@ -18,8 +18,13 @@ struct CountryCard: View {
     var body: some View {
         NavigationLink(destination:SingleCountry(countryName: name) , label:{
             VStack(alignment: .leading) {
-               Image(image).resizable().frame(maxHeight: 200).cornerRadius(10)
-                Text(name).padding(.trailing, 20).foregroundColor(.black)
+               
+                Image(image).resizable().frame(maxHeight: 200).cornerRadius(10).overlay( Text(name).padding(5).foregroundColor(.black).background ( LinearGradient(
+                    colors: [.red, .blue, .green, .yellow],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )).padding(),alignment: .bottomLeading).padding()
+               
            }
         })
     }

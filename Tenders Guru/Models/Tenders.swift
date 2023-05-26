@@ -55,14 +55,14 @@ struct Datum: Codable {
 //
 //// MARK: - Awarded
 struct Awarded: Codable {
-    let date, suppliersid: String?
-    let count: Int?
+    let date: String?
+//    let count: Int?
     let suppliersName, value: String?
 
     enum CodingKeys: String, CodingKey {
         case date
-        case suppliersid = "suppliers_id"
-        case count
+//        case suppliersid = "suppliers_id"
+//        case count
         case suppliersName = "suppliers_name"
         case value
     }
