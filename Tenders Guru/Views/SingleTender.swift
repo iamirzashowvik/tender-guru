@@ -55,6 +55,11 @@ struct SingleTender: View {
                             .frame(height: 10)
                     Text(apiRequest.tenderResponse.description ?? "title")
                     Spacer()
+                    HStack {
+                         Image(systemName: "appclip")
+                        Text(getCapitalizeFirstLetterOfAString(str:apiRequest.tenderResponse.category!))
+                    }.padding(5).foregroundColor(.white).background(Color(.green)).cornerRadius(10)
+                    Spacer()
                     HStack{
                         Image(systemName: "person")
                         Text(apiRequest.tenderResponse.purchaser_name ?? "title")
@@ -66,4 +71,11 @@ struct SingleTender: View {
             await self.apiRequest.fetchData(countryCode: countryCode, tenderId: "\(tenderId)")
         }
     }
+}
+
+
+func getCapitalizeFirstLetterOfAString(str:String)->String{
+    let firstLetter = str.prefix(1).uppercased()
+    let others=str.suffix(str.count-1)
+    return String(firstLetter + others)
 }

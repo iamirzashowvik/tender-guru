@@ -19,11 +19,11 @@ struct CountryCard: View {
         NavigationLink(destination:SingleCountry(countryName: name) , label:{
             VStack(alignment: .leading) {
                
-                Image(image).resizable().frame(maxHeight: 200).cornerRadius(10).overlay( Text(name).padding(5).foregroundColor(.black).background ( LinearGradient(
-                    colors: [.red, .blue, .green, .yellow],
-                    startPoint: .leading,
-                    endPoint: .trailing
-                )).padding(),alignment: .bottomLeading).padding()
+                Image(image).resizable().frame(maxHeight: 200).cornerRadius(10).overlay( Text(name).padding(5).foregroundColor(.white).background ( LinearGradient(
+                    colors: [.black,.white],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )).padding(),alignment: .bottomLeading)
                
            }
         })
