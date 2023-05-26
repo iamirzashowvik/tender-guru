@@ -1,28 +1,12 @@
-
-
-//import Foundation
-//struct SingleTenderDetails:Codable{
-//    let id,date,deadline_date,deadline_length_days,deadline_length_hours,title,category,description,sid,purchaser_name :String
-//    let data : DataX
-//}
-//
-//struct DataX : Codable{
-//    let source,procedure_id,procedure_sid:String
-//}
-
-
-
-// SingleTender.swift
-
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let singleTender = try? newJSONDecoder().decode(SingleTender.self, from: jsonData)
+//   let singleTender = try? JSONDecoder().decode(SingleTender.self, from: jsonData)
 
 import Foundation
 
 // MARK: - SingleTender
-struct SingleTenderX: Codable {
+struct SingleTenderModel: Codable {
     let id, date, deadlineDate, deadlineLengthDays: String?
     let deadlineLengthHours, title, category, description: String?
     let sid, purchaserName: String?
@@ -39,15 +23,6 @@ struct SingleTenderX: Codable {
         case data, notices
     }
 }
-
-// SingleTenderData.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let singleTenderData = try? newJSONDecoder().decode(SingleTenderData.self, from: jsonData)
-
-import Foundation
 
 // MARK: - SingleTenderData
 struct SingleTenderData: Codable {
@@ -69,15 +44,6 @@ struct SingleTenderData: Codable {
     }
 }
 
-// Procedure.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let procedure = try? newJSONDecoder().decode(Procedure.self, from: jsonData)
-
-import Foundation
-
 // MARK: - Procedure
 struct Procedure: Codable {
     let view: View?
@@ -86,15 +52,6 @@ struct Procedure: Codable {
     let reports: Reports?
     let criterias: Criterias?
 }
-
-// Candidate.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let candidate = try? newJSONDecoder().decode(Candidate.self, from: jsonData)
-
-import Foundation
 
 // MARK: - Candidate
 struct Candidate: Codable {
@@ -115,29 +72,11 @@ struct Candidate: Codable {
     let sysProcedureDSPOfferStateId: Int?
 }
 
-// DuaeEvaluationState.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let duaeEvaluationState = try? newJSONDecoder().decode(DuaeEvaluationState.self, from: jsonData)
-
-import Foundation
-
 // MARK: - DuaeEvaluationState
 struct DuaeEvaluationState: Codable {
     let id: Int?
     let text, localeKey: String?
 }
-
-// Criterias.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let criterias = try? newJSONDecoder().decode(Criterias.self, from: jsonData)
-
-import Foundation
 
 // MARK: - Criterias
 struct Criterias: Codable {
@@ -146,29 +85,11 @@ struct Criterias: Codable {
     let isWithReopeningCompetitionInSEAP: JSONNull?
 }
 
-// Reports.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let reports = try? newJSONDecoder().decode(Reports.self, from: jsonData)
-
-import Foundation
-
 // MARK: - Reports
 struct Reports: Codable {
     let items: [Item]?
     let isProcedureStatementInProgress: Bool?
 }
-
-// Item.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let item = try? newJSONDecoder().decode(Item.self, from: jsonData)
-
-import Foundation
 
 // MARK: - Item
 struct Item: Codable {
@@ -184,15 +105,6 @@ struct Item: Codable {
     let versionNo: String?
 }
 
-// SysNoticeDocumentType.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let sysNoticeDocumentType = try? newJSONDecoder().decode(SysNoticeDocumentType.self, from: jsonData)
-
-import Foundation
-
 // MARK: - SysNoticeDocumentType
 struct SysNoticeDocumentType: Codable {
     let id: Int?
@@ -200,28 +112,10 @@ struct SysNoticeDocumentType: Codable {
     let localeKey: JSONNull?
 }
 
-// Suspensions.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let suspensions = try? newJSONDecoder().decode(Suspensions.self, from: jsonData)
-
-import Foundation
-
 // MARK: - Suspensions
 struct Suspensions: Codable {
     let message: String?
 }
-
-// View.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let view = try? newJSONDecoder().decode(View.self, from: jsonData)
-
-import Foundation
 
 // MARK: - View
 struct View: Codable {
@@ -245,30 +139,12 @@ struct View: Codable {
     let canGenerateAqf, canViewAqf, canAddAwardNotice: Bool?
 }
 
-// AwardNoticeInfo.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let awardNoticeInfo = try? newJSONDecoder().decode(AwardNoticeInfo.self, from: jsonData)
-
-import Foundation
-
 // MARK: - AwardNoticeInfo
 struct AwardNoticeInfo: Codable {
     let awardNoticeId, awardNoticeStateId: Int?
     let awardNoticeNumber, awardNoticePublicationDate: String?
     let awardNoticeTypeId, awardNoticeVersionId: Int?
 }
-
-// Header.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let header = try? newJSONDecoder().decode(Header.self, from: jsonData)
-
-import Foundation
 
 // MARK: - Header
 struct Header: Codable {
@@ -293,15 +169,6 @@ struct Header: Codable {
     let procedureLotHeader: ProcedureLotHeader?
 }
 
-// ProcedureLotHeader.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let procedureLotHeader = try? newJSONDecoder().decode(ProcedureLotHeader.self, from: jsonData)
-
-import Foundation
-
 // MARK: - ProcedureLotHeader
 struct ProcedureLotHeader: Codable {
     let procedureLotId: Int?
@@ -313,15 +180,6 @@ struct ProcedureLotHeader: Codable {
     let isInAwardingProcess: Bool?
     let suspensionDate, isSupplierEnrolled, supplierCount, supplierWithdrawnCount: JSONNull?
 }
-
-// Info.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let info = try? newJSONDecoder().decode(Info.self, from: jsonData)
-
-import Foundation
 
 // MARK: - Info
 struct Info: Codable {
@@ -335,15 +193,6 @@ struct Info: Codable {
     let financialWeight, technicalWeight: Int?
     let isRestrictedProcedureType, isOpenOrRfqProcedureType, isMultiplePhaseProcedureType, hasAdditionalExtendTermsOnOffline: Bool?
 }
-
-// ParticipantSupplier.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let participantSupplier = try? newJSONDecoder().decode(ParticipantSupplier.self, from: jsonData)
-
-import Foundation
 
 // MARK: - ParticipantSupplier
 struct ParticipantSupplier: Codable {
@@ -361,29 +210,11 @@ struct ParticipantSupplier: Codable {
     let isWinner: Bool?
 }
 
-// ParticipantsInfo.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let participantsInfo = try? newJSONDecoder().decode(ParticipantsInfo.self, from: jsonData)
-
-import Foundation
-
 // MARK: - ParticipantsInfo
 struct ParticipantsInfo: Codable {
     let noOfEnrolledSuppliers, noOfWithdrawnSuppliers, noWithFiledOffer, noWithPendingOffer: Int?
     let noEvaluatedAdmitted, noEvaluatedRejected, noEvaluated: Int?
 }
-
-// PhaseInfo.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let phaseInfo = try? newJSONDecoder().decode(PhaseInfo.self, from: jsonData)
-
-import Foundation
 
 // MARK: - PhaseInfo
 struct PhaseInfo: Codable {
@@ -391,15 +222,6 @@ struct PhaseInfo: Codable {
     let hasElectronicAuction, hasEvaluationDeadlineExtended: Bool?
     let procedurePhaseList: [ProcedurePhaseList]?
 }
-
-// ProcedurePhaseList.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let procedurePhaseList = try? newJSONDecoder().decode(ProcedurePhaseList.self, from: jsonData)
-
-import Foundation
 
 // MARK: - ProcedurePhaseList
 struct ProcedurePhaseList: Codable {
@@ -409,29 +231,11 @@ struct ProcedurePhaseList: Codable {
     let isVisible, isSelected: Bool?
 }
 
-// ProcedureLotFilterData.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let procedureLotFilterData = try? newJSONDecoder().decode(ProcedureLotFilterData.self, from: jsonData)
-
-import Foundation
-
 // MARK: - ProcedureLotFilterData
 struct ProcedureLotFilterData: Codable {
     let procedurePhases, procedureStates, evaluationStates, procedureXSupplierStates: [EaPhase]?
     let eaPhases: [EaPhase]?
 }
-
-// EaPhase.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let eaPhase = try? newJSONDecoder().decode(EaPhase.self, from: jsonData)
-
-import Foundation
 
 // MARK: - EaPhase
 struct EaPhase: Codable {
@@ -439,15 +243,6 @@ struct EaPhase: Codable {
     let text: String?
     let localeKey: String?
 }
-
-// SupplierList.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let supplierList = try? newJSONDecoder().decode(SupplierList.self, from: jsonData)
-
-import Foundation
 
 // MARK: - SupplierList
 struct SupplierList: Codable {
@@ -464,15 +259,6 @@ struct SupplierList: Codable {
     let sysProcedureDSPOfferStateId: JSONNull?
 }
 
-// Terms.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let terms = try? newJSONDecoder().decode(Terms.self, from: jsonData)
-
-import Foundation
-
 // MARK: - Terms
 struct Terms: Codable {
     let procedureLotId: Int?
@@ -488,15 +274,6 @@ struct Terms: Codable {
     let isOfferDeadlineOverdue: Bool?
     let isCandidatureDeadlineOverdue: JSONNull?
 }
-
-// Notice.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let notice = try? newJSONDecoder().decode(Notice.self, from: jsonData)
-
-import Foundation
 
 // MARK: - Notice
 struct Notice: Codable {
@@ -516,15 +293,6 @@ struct Notice: Codable {
     }
 }
 
-// NoticeData.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let noticeData = try? newJSONDecoder().decode(NoticeData.self, from: jsonData)
-
-import Foundation
-
 // MARK: - NoticeData
 struct NoticeData: Codable {
     let date: String?
@@ -539,15 +307,6 @@ struct NoticeData: Codable {
     }
 }
 
-// DataType.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let dataType = try? newJSONDecoder().decode(DataType.self, from: jsonData)
-
-import Foundation
-
 // MARK: - DataType
 struct DataType: Codable {
     let id: Int?
@@ -559,22 +318,9 @@ struct DataType: Codable {
     }
 }
 
-// NoticeType.swift
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let noticeType = try? newJSONDecoder().decode(NoticeType.self, from: jsonData)
-
-import Foundation
-
 // MARK: - NoticeType
 struct NoticeType: Codable {
 }
-
-// JSONSchemaSupport.swift
-
-import Foundation
 
 // MARK: - Encode/decode helpers
 
@@ -586,10 +332,6 @@ class JSONNull: Codable, Hashable {
 
     public var hashValue: Int {
         return 0
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        // No-op
     }
 
     public init() {}
