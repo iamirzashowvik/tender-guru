@@ -39,8 +39,10 @@ struct SingleCountry: View {
         VStack(alignment: .leading){
             Text(countryName).task {
                 await fetchData()
-            }.padding(10)
+            }.padding(10).bold()
             Image(countryName.lowercased()).resizable().frame(maxHeight: 200).cornerRadius(10).padding(.horizontal,10)
+            
+            Spacer()
             
             if terndersResponse.data.count == 0 {
                 HStack{
@@ -51,31 +53,36 @@ struct SingleCountry: View {
                     Spacer()
                 }.padding()
             }
-            Text("Tenders").bold().padding(10)
+            
+            
+            Spacer()
             if terndersResponse.data.count > 0 {
                 
-                List{
-                    ForEach(Array(terndersResponse.data.enumerated()),id: \.element.id){ index,tender in
-                       
-                        NavigationLink(destination:SingleTender(countryCode: getCountryString(name: countryName.lowercased()), tenderId:index+1 ), label: {
-                            VStack(alignment: .leading){
-                                Text(tender.category!).padding(5).background(Color(hex:tender.category=="services" ? 0xFE6E00:0x28D796)).cornerRadius(10)
-                                Text(tender.title ?? "Unknown").bold()
-                                HStack{
-                                    Image(systemName: "box.truck.fill")
-                                    Text(tender.supplier?.label ?? "")
+                VStack{
+                    Text("Tenders").bold().padding(10)
+                    List{
+                        ForEach(Array(terndersResponse.data.enumerated()),id: \.element.id){ index,tender in
+                           
+                            NavigationLink(destination:SingleTender(countryCode: getCountryString(name: countryName.lowercased()), tenderId:index+1 ), label: {
+                                VStack(alignment: .leading){
+                                    Text(tender.category!).padding(5).background(Color(hex:tender.category=="services" ? 0xFE6E00:0x28D796)).cornerRadius(10)
+                                    Text(tender.title ?? "Unknown").bold()
+                                    HStack{
+                                        Image(systemName: "box.truck.fill")
+                                        Text(tender.supplier?.label ?? "")
+                                    }
+                                    HStack{
+                                        Image(systemName:  "calendar.badge.clock")
+                                        Text("\(tender.date ?? "")")
+                                        Spacer()
+                                        Image(systemName:  "trophy")
+                                        Text("\(tender.awardedValueEu ?? "")")
+                                    }
                                 }
-                                HStack{
-                                    Image(systemName:  "calendar.badge.clock")
-                                    Text("\(tender.date ?? "")")
-                                    Spacer()
-                                    Image(systemName:  "trophy")
-                                    Text("\(tender.awardedValueEu ?? "")")
-                                }
-                            }
-                        })
+                            })
+                        }
+                        
                     }
-                    
                 }
                 
                 

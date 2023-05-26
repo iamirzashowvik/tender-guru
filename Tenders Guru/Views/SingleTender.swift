@@ -1,9 +1,4 @@
-//
-//  SingleTender.swift
-//  Tenders Guru
-//
-//  Created by Mirza Showvik on 25/5/23.
-//
+
 
 import SwiftUI
 
@@ -15,27 +10,60 @@ struct SingleTender: View {
         self.tenderId = tenderId
     }
     
-    @State private var ternderResponse=SingleTenderDetails()
     
-    func fetchData()async {
-        do {
-            let url = URL(string: "https://tenders.guru/api/\(countryCode)/tenders/\(tenderId)")
-            if url == nil{
-                return;
-            }
-            
-            let (data, _) = try await URLSession.shared.data(from: url!)
-            
-            let decodedData = try JSONDecoder().decode(SingleTenderDetails.self, from: data)
-            
-            self.ternderResponse = decodedData
-            
-        } catch {
-            print("Error fetching data: \(error)")
-        }
-    }
+    
+    @ObservedObject var apiRequest = ApiRequest()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+            if apiRequest.tenderResponse.title==nil {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+            if apiRequest.tenderResponse.title != nil{
+                VStack{
+                    HStack{
+                        Image(systemName: "clock")
+                        Text(apiRequest.tenderResponse.date ?? "title")
+                        Spacer()
+                       
+                       HStack {
+                            Image(systemName: "calendar")
+                           Text(apiRequest.tenderResponse.deadline_date ?? "title")
+                       }.padding(5).foregroundColor(.white).background(Color(.red)).cornerRadius(10)
+                    }.padding(.trailing,10)
+                    
+                    HStack{
+                        Spacer()
+                        VStack{
+                            HStack{
+                                Text(apiRequest.tenderResponse.deadline_length_days ?? "00")
+                                Text("days left/")
+                            }
+                            HStack{
+                                Text(apiRequest.tenderResponse.deadline_length_hours ?? "00")
+                                Text("hours left")
+                            }
+                        }
+
+                        Spacer()
+                    }
+                    Spacer()
+                    Text(apiRequest.tenderResponse.title ?? "title").bold()
+                    Spacer()
+                            .frame(height: 10)
+                    Text(apiRequest.tenderResponse.description ?? "title")
+                    Spacer()
+                    HStack{
+                        Image(systemName: "person")
+                        Text(apiRequest.tenderResponse.purchaser_name ?? "title")
+                    }.padding().bold()
+                }
+            }
+            
+        }.padding().task {
+            await self.apiRequest.fetchData(countryCode: countryCode, tenderId: "\(tenderId)")
+        }
     }
 }
