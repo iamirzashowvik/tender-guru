@@ -15,24 +15,21 @@ struct SingleTender: View {
         self.tenderId = tenderId
     }
     
-    @State private var ternderResponse=SingleTenderModel()
-    
-    
+    @State private var ternderResponse=SingleTenderDetails()
     
     func fetchData()async {
-    
         do {
             let url = URL(string: "https://tenders.guru/api/\(countryCode)/tenders/\(tenderId)")
             if url == nil{
                 return;
             }
-
+            
             let (data, _) = try await URLSession.shared.data(from: url!)
-
-            let decodedData = try JSONDecoder().decode(SingleTenderModel.self, from: data)
-
+            
+            let decodedData = try JSONDecoder().decode(SingleTenderDetails.self, from: data)
+            
             self.ternderResponse = decodedData
-
+            
         } catch {
             print("Error fetching data: \(error)")
         }
