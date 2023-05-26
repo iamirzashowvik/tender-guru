@@ -17,6 +17,7 @@
 		C1ACF5E52A1F7D9400D17008 /* Tenders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5E42A1F7D9400D17008 /* Tenders.swift */; };
 		C1ACF5E72A1FA3A500D17008 /* SingleTender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5E62A1FA3A500D17008 /* SingleTender.swift */; };
 		C1ACF5E92A207DEF00D17008 /* SingleTenderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACF5E82A207DEF00D17008 /* SingleTenderDetails.swift */; };
+		C1DB03792A20E9E3004AACFC /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB03782A20E9E3004AACFC /* json.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C1ACF5E42A1F7D9400D17008 /* Tenders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenders.swift; sourceTree = "<group>"; };
 		C1ACF5E62A1FA3A500D17008 /* SingleTender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTender.swift; sourceTree = "<group>"; };
 		C1ACF5E82A207DEF00D17008 /* SingleTenderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTenderDetails.swift; sourceTree = "<group>"; };
+		C1DB03782A20E9E3004AACFC /* json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				C1ACF5E42A1F7D9400D17008 /* Tenders.swift */,
 				C1ACF5E82A207DEF00D17008 /* SingleTenderDetails.swift */,
+				C1DB03782A20E9E3004AACFC /* json.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				C1ACF5E72A1FA3A500D17008 /* SingleTender.swift in Sources */,
 				C1ACF5CF2A1F731100D17008 /* ContentView.swift in Sources */,
+				C1DB03792A20E9E3004AACFC /* json.swift in Sources */,
 				C1ACF5DC2A1F768F00D17008 /* Colors.swift in Sources */,
 				C1ACF5E22A1F7BD300D17008 /* SingleCountry.swift in Sources */,
 				C1ACF5E02A1F798F00D17008 /* CountryCard.swift in Sources */,
